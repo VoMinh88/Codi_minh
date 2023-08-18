@@ -16,6 +16,7 @@ $(document).ready(function () {
   test();
   todoSubmit();
   show();
+  searchTodo()
 });
 function test() {
   $("#test").click(function (e) {
@@ -140,6 +141,8 @@ function todoSubmit() {
             Toast.fire({
               icon: "success",
               title: "Đã thêm thành công",
+            }).then(()=>{
+              window.location.reload()
             })
             
           }
@@ -283,4 +286,49 @@ function editTodo(){
         }
     });
  });
+};
+function searchTodo(){
+  $('#searchTodo').keyup(function (e) { 
+    var todo = $(this).val().trim();
+    if (todo==0) {
+      show();
+    } else {
+      $.ajax({
+        type: "post",
+        url: "https://students.trungthanhweb.com/api/searchtodo",
+        data: {
+          apitoken:localStorage.getItem('token'),
+          todo:todo
+        },
+        dataType: "JSON",
+        success: function (res) {
+  
+  
+              const todo = res.todo;
+              if (todo.length>0) {
+                  var str = ``;
+                  var count = 1;
+                  todo.forEach((el,key) => {
+                      str += `
+                      <tr>
+          <th scope="row">`+(count++)+`</th>
+          <td><b class="todo">`+el.note+`</b></td>
+          <td><input type="checkbox" class="finish"></td>
+          <td>
+            <div class="d-flex">
+              <button class="btn-sm btn-warning editTodoBtn" data-id="`+el.id+`" data-key="`+key+`" data-value="`+el.note+`">Sửa</button>
+              <button class="btn-sm btn-danger ms-3 deletebtn" data-id="`+el.id+`">Xoá</button>
+            </div>
+          </td>
+        </tr>`;
+                  });
+                  $("#dataTable").html(str);
+                  $("#todoTable").show();
+              }
+  
+  
+        }
+      });
+    }
+  });
 };
