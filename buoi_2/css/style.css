@@ -1,0 +1,19 @@
+.headermobile{
+    width: 98%;
+    height: auto;
+    margin: 10px auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 8% 80% 10%;
+    background-color: rgb(65, 62, 59);
+
+}
+.headermobile>.row>.col_head:first-child>img{
+    margin-top: 2px;
+    margin-left: 2px;
+    width: auto;
+    height: 50px;
+}
+@media screen and (min-width:896px) {
+    
+}

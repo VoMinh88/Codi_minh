@@ -1,0 +1,130 @@
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: 100%;
+    margin: auto;
+
+    .row {
+      width: 100%;
+      margin: 0 auto;
+      width: fit-content;
+      border: 1px solid greenyellow;
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .col {
+      width: 100%;
+      text-align: center;
+    }
+    .but {
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
+      .but1 {
+        border-radius: 20px;
+        background-color: blueviolet;
+        padding: 10px;
+        margin-right: 10px;
+      }
+      .but2 {
+        border-radius: 20px;
+        background-color: rgb(121, 158, 228);
+      }
+
+  }
+  .cart{
+    width: 100%;
+    margin: 0px auto;
+
+    background-color: aquamarine;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 5% 35% 20% 20% 20%;
+    border-bottom: 0.5px solid blue;
+    
+  }
+  .cart:last-child{
+    border-bottom: 0;
+    border-radius: 0 0 5px 5px ;
+  }
+  #cart1{
+
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(171, 162, 179);
+  }
+
+  .cart>.menu{
+    color: blueviolet;
+    font-weight: bolder;
+
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin: 0px auto;
+
+    .row {
+      width: 90%;
+      border: 1px solid greenyellow;
+      padding: 15px;
+      border-radius: 20px;
+        
+    }
+    .col {
+      width: 100%;
+      text-align: center;
+
+    }
+    .text {
+      color: blue;
+    }
+    .but {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+    .but1 {
+      border-radius: 20px;
+      background-color: blueviolet;
+      padding: 10px;
+      margin-right: 10px;
+    }
+    .but2 {
+      border-radius: 20px;
+      background-color: rgb(121, 158, 228);
+    }
+
+  }
+  .cart{
+    width: 100%;
+    margin: 0px auto;
+
+    background-color: aquamarine;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 5% 35% 20% 20% 20%;
+    border-bottom: 0.5px solid blue;
+    
+  }
+  .cart:last-child{
+    border-bottom: 0;
+    border-radius: 0 0 5px 5px ;
+  }
+  #cart1{
+
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(171, 162, 179);
+  }
+
+  .cart>.menu{
+    color: blueviolet;
+    font-weight: bolder;
+
+  }
+
+}

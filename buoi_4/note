@@ -1,0 +1,93 @@
+ $("#themBtn").click(function (e) {
+    e.preventDefault();
+    var todo = $('#todo').val().trim;
+    if (todo == "") {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+      Toast.fire({
+        icon: "error",
+        title: "Vui lòng nhập lại Todo",
+      });
+    } else {
+      $.ajax({
+        type: "post",
+        url: "https://students.trungthanhweb.com/api/todo",
+        data: {
+          apitoken: localStorage.getItem("token"),
+          todo: todo,
+        },
+        dataType: "JSON",
+        success: function (response) {
+          if (res.check == true) {
+            console.log(res.todo)
+            const Toast = Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 1500,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener("mouseenter", Swal.stopTimer);
+                toast.addEventListener("mouseleave", Swal.resumeTimer);
+              },
+            });
+            Toast.fire({
+              icon: "success",
+              title: "Đã thêm thành công",
+              
+            }).then(() => {
+              window.location.reload();
+            });
+          }
+          if (res.msg.apitoken) {
+            const Toast = Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 1500,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener("mouseenter", Swal.stopTimer);
+                toast.addEventListener("mouseleave", Swal.resumeTimer);
+              },
+            });
+            Toast.fire({
+              icon: "error",
+              title: "Bạn chưa đăng nhập",
+            }).then(() => {
+              window.location.reload();
+            });
+          } else {
+            if (res.msg.todo) {
+              const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener("mouseenter", Swal.stopTimer);
+                  toast.addEventListener("mouseleave", Swal.resumeTimer);
+                },
+              });
+              Toast.fire({
+                icon: "error",
+                title: "Bạn chưa nhập TOdo",
+              }).then(() => {
+                window.location.reload();
+              });
+            }
+          }
+        },
+      });
+    }
+  });

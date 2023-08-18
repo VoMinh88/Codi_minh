@@ -1,0 +1,15 @@
+.voucher{
+    width: 80%;
+    margin: 10px auto;
+}
+
+@media screen and (max-width:760px){
+    .row {
+        justify-content: center !important;
+    }
+}
+@media screen and (min-width:1400px){
+    .row {
+        justify-content: start !important;
+    }
+}
