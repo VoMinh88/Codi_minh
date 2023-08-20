@@ -7,8 +7,29 @@
     <link rel="stylesheet" href="../css/bootstrap5.1.css">
     <link rel="stylesheet" href="css/style.css">
   <script src="../js/bootstrap5.1.js"></script>
+  <script src="js/script.js"></script>
 </head>
 <body>
+    <!-- Login Modal -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="LoginModalLabel">Trang Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+             <input type="text" class="form-control" id="email">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              <button type="button" class="btn btn-primary" id="submitLoginBtn">Đăng Nhập</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Kết thúc Login Modal -->
+
 
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-success">
@@ -43,7 +64,7 @@
                     <a class="nav-link" href="#">Giỏ Hàng</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link disabled">Login</a>
+                    <a class="nav-link" href="#" id="loginBtn">Login</a>
                   </li>
                 </ul>
                 <form class="d-flex">

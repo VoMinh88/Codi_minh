@@ -10,6 +10,13 @@
 }
 @media screen and (min-width:1400px){
     .row {
-        justify-content: start !important;
+        justify-content:start !important;
+
     }
+}
+footer{
+    background-color:#beb3b3;
+    text-align:center;
+    padding:20px;
+    font-size:18px;
 }

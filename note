@@ -91,3 +91,47 @@
       });
     }
   });
+
+
+  <div class="container  mt-2 " >
+            <div class="row justify-content-xl-between products">
+
+                <div class="col-md-3 card m-3 border-info" style="border-radius: 10px; ">
+                    <img src="https://students.trungthanhweb.com/images/41373386.png" class="card-img-top" alt="Iphone 14 Pro Max " >
+                    <div class="card-body m-2">
+                      <h5 class="card-title">Iphone 14 Pro Max</h5>
+                      <p class="card-text">Giá : 26,000,000 <br>
+                      <p>Loại sản phẩm : Điện Thoại</p>
+                        Loại sản phẩm : Điện Thoại <br>                        
+                        Thương hiệu : Apple
+                      <div class="col-md">
+                        <a href="#" class="btn btn-primary col col-md m-2 w-auto ">Xem Thêm</a>
+                        <a href="#" class="btn btn-primary col col-md m-2 w-auto">Giỏ Hàng</a>
+                       </div>
+Intl.numberFormat('UN-US')
+                    </div>
+                  </div>
+                  
+                  </div>
+            </div>
+            </div>
+
+
+
+    var id = Number($(this).attr('#data-id'))
+    var qty = 1
+    var item = [id,qty]
+    var check = 0
+    arr.forEach(el => {
+      if (el[0]==id) {
+        el[1]++
+        check = 1
+      } else {
+        arr.push(item)
+      }
+      localStorage.setItem('cart',JSON.stringify(arr))
+      Toast.fire({
+        icon: "success",
+        title: "Đã Thêm Thành Công",
+      });
+    });
