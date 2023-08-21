@@ -34,7 +34,7 @@ function loaddetail(){
                 `;
                 $("#gallery-data").append(str);
             });
-            Owl();
+            
             
             const dtproduct = res.products;
             // const imgproduct = dtproduct.images
@@ -42,9 +42,10 @@ function loaddetail(){
             dtproduct.forEach(el => {
               str=`<img src="https://students.trungthanhweb.com/images/`+el.images+`" alt="" style="width: 100%;" id="changeimg-product">`
               $("#img-product").html(str);
+              
             });
-
-            
+            Owl();
+            changeImg();
             dtproduct.forEach(el => {
               str=`
               <table class="table text-start w-100" style ="word-wrap: break-word;"  >
@@ -79,7 +80,7 @@ function loaddetail(){
               $("#table-product").html(str);
               
             });
-            changeImg();
+            
           }       
   // Kết thúc vòng ajax Thành công
         },
@@ -100,13 +101,14 @@ function loaddetail(){
               nav:true
           },
           600:{
-              items:3,
-              nav:false
+              items:2,
+              nav:false,
+              loop:true
           },
           1000:{
               items:3,
               nav:false,
-              loop:false
+              loop:true
           }
       }
   })
