@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+    <link rel="stylesheet" href="../css/bootstrap5.1.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="../js/bootstrap5.1.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/sweetalert2.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/script2.js"></script>
+</head>
+
+<body>
+    <!-- Login Modal -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="LoginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="LoginModalLabel">Login Page</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="email">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitLoginBtn">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Kết thúc Logout Modal -->
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="LogoutModal" tabindex="-1" aria-labelledby="LogoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="LogoutModalLabel">Bạn có muốn đăng xuất ?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="submitLogoutBtn">Đăng Xuất</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Kết thúc Logout Modal -->
+
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="anhngucauvong.com"><img src="../logo/rainbow.png" alt="Rainbow"
+                        style="height: 30px; width: auto;"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-danger" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-danger">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="menu nav-link dropdown-toggle" href="#" id="brands" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Thương Hiệu
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="brand-data">
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="menu nav-link dropdown-toggle" href="#" id="cates" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Sản Phẩm
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="cate-data">
+
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="cart">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="loginBtn">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="logoutBtn">Logout</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success bg-info" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- End Header -->
+
+    <div class="container  mt-2" id="body-data">
+        <h1 style="text-align: center;">Chi Tiết Sản Phẩm</h1>
+        <hr>
+
+        <div class="container" style="text-align: center;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="img-product">
+                        
+                    </div>
+                    
+                    <div class="owl-carousel owl-theme owl-loaded">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" id="gallery-data">
+                                <!-- <div class="owl-item">1</div>
+                                <div class="owl-item">2</div>
+                                <div class="owl-item">3</div>
+                                <div class="owl-item">4</div>
+                                <div class="owl-item">5</div>
+                                <div class="owl-item">6</div> -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sameBrand">
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-md-9 " style="background-color: rgb(190, 190, 231); " id="table-product">
+                    <!-- <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Tên SP</td>
+                                <td>Iphone 13 Pro</td>
+                            </tr>
+                            <tr>
+                                <td>Giá</td>
+                                <td>xxx</td>
+                            </tr>
+                            <tr>
+                                <td>Thương Hiệu</td>
+                                <td>Apple</td>
+                            </tr>
+                            <tr>
+                                <td>Loại SP</td>
+                                <td>Điện Thoại</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Chi Tiết</td>
+
+                            </tr>
+                        </tbody>
+                    </table> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <footer>
+        <div>©2023 Shop cơ bản Edit by MinhVo</div>
+        <div>Email: Vominh.tek@gmail.com</div>
+    </footer>
+</body>
+
+</html>

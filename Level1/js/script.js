@@ -19,8 +19,7 @@ $(document).ready(function () {
   logoutBtn();
   loadMenu();
   loadProduct();
-  loadmoreProduct();
-
+  loadmoreProduct();  
 });
 
 function login() {
@@ -164,13 +163,14 @@ function loadProduct() {
                   <p class="card-text">Giá : ` +Intl.NumberFormat("en-US").format(el.price) +` vnđ</p>
                   <p>Loại sản phẩm : ` +el.catename +`</p>
                   <p>Loại sản phẩm : ` +el.brandname +`</p>
-                  <a href="#" class="btn btn-primary col col-md m-2 w-auto chitietBtn" data-id="`+el.id+`">Chi tiết</a>
-                  <button class="btn btn-primary col col-md m-2 w-auto addtocartBtn" data-id="`+el.id+`">Giỏ Hàng</button>                   
+                  <a href="detail.html?id=`+el.id+`" class="btn btn-primary col col-md m-2 w-auto chitietBtn" item-id="`+el.id+`">Chi tiết</a>
+                  <button class="btn btn-primary col col-md m-2 w-auto addtocartBtn" cart-id="`+el.id+`">Thêm Giỏ Hàng</button>                   
                 </div>
               </div>
             </div>
             `;
           });
+
         }
 
         if (res.products.next_page_url != null) {
@@ -180,26 +180,51 @@ function loadProduct() {
         }
 
         $("#product-data").append(str);
+        addToCart()
       },
     });
   } else {
     $("#body-data").hide();
   }
-  addtocart();
+  
 
 }
 function loadmoreProduct() {
   $("#more-data").click(function (e) {
     e.preventDefault();
-    loadProduct();
-    
+    loadProduct();    
   });
 
 }
-function addtocart() {
+function addToCart() {
+  $('.addtocartBtn').click(function (e) { 
+    e.preventDefault();
+    if (localStorage.getItem('cart')&&localStorage.getItem('cart')!=null) {
+      
+      var cart = localStorage.getItem('cart')
+      var arr = JSON.parse(cart)
+    } else {
+      var arr = []
+    }
+    var id = Number($(this).attr('cart-id'))
+    var qty = 1
 
-$('.addtocartBtn').click(function (e) { 
-  e.preventDefault();
-  alert('thu')
-});
+    var check = 0
+
+    arr.forEach(el => {
+      if (id==el[0]) {
+        el[1]++
+        check = 1
+      } 
+    });
+    if(check==0) {
+      var item = [id,qty]
+      arr.push(item)
+    }
+    localStorage.setItem('cart',JSON.stringify(arr))
+      Toast.fire({
+        icon: "success",
+        title: "Đã Thêm Thành Công",
+      });
+  });
 }

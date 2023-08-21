@@ -1,22 +1,32 @@
-.voucher{
-    width: 80%;
-    margin: 10px auto;
+.voucher {
+  width: 80%;
+  margin: 10px auto;
 }
 
-@media screen and (max-width:760px){
-    .row {
-        justify-content: center !important;
-    }
+@media screen and (max-width: 760px) {
+  .row {
+    justify-content: center !important;
+  }
 }
-@media screen and (min-width:1400px){
-    .row {
-        justify-content:start !important;
-
-    }
+@media screen and (min-width: 1400px) {
+  .row {
+    justify-content: start !important;
+  }
 }
-footer{
-    background-color:#beb3b3;
-    text-align:center;
-    padding:20px;
-    font-size:18px;
+footer {
+  background-color: #beb3b3;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+}
+.container {
+  width: 90%;
+}
+img,
+svg {
+  width: 100% !important;
+  height: auto;
+}
+.pointer {
+  cursor: pointer;
 }
