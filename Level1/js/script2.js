@@ -3,6 +3,9 @@
   ///////Khai báo Thông báo///////////
   $(document).ready(function () {
     loaddetail();
+    loadMenu();
+    loadProduct();
+    loadmoreProduct();  
 
   });
   
