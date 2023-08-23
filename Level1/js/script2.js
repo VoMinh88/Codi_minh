@@ -3,12 +3,21 @@
   ///////Khai báo Thông báo///////////
   $(document).ready(function () {
     loaddetail();
-    loadMenu();
-    loadProduct();
-    loadmoreProduct();  
 
   });
   
+function xemThemBtn(){
+ var newHeight =  $(".content-data")[0].offsetHeight;
+
+ const height = 500;
+ $(".content-data").css("height",height)
+ $(".content-data").css('overflow',"hidden")
+  $(".xemThemBtn").click(function (e) {
+    e.preventDefault();
+    $(".content-data").css("height",newHeight)
+})
+}
+
 
 function loaddetail(){
     if (localStorage.getItem("token") && localStorage.getItem("token") != null) {
@@ -33,7 +42,7 @@ function loaddetail(){
             gallery.forEach((el) => {
               str +=
                 `
-                <div class="owl-item imgchange pointer"><img src="`+el+`" alt=""></div>
+                <div class="owl-item pointer"><img class="imgChange" src="`+el+`" alt=""></div>
                 `;
                 $("#gallery-data").append(str);
             });
@@ -47,6 +56,9 @@ function loaddetail(){
               $("#img-product").html(str);
               
             });
+
+            
+
             Owl();
             changeImg();
             dtproduct.forEach(el => {
@@ -74,7 +86,7 @@ function loaddetail(){
                   <td>`+el.discount+` %</td>
               </tr>
                   <tr>
-                      <td colspan="2" role="textbox" >`+el.content+`</td>
+                      <td colspan="2" >`+el.content+`</td>
   
                   </tr>
               </tbody>
@@ -83,7 +95,7 @@ function loaddetail(){
               $("#table-product").html(str);
               
             });
-            
+            xemThemBtn();
           }       
   // Kết thúc vòng ajax Thành công
         },
@@ -117,7 +129,7 @@ function loaddetail(){
   })
   }
   function changeImg(){
-    $('.imgchange').click(function (e) { 
+    $('.imgChange').click(function (e) { 
       e.preventDefault();      
       var src = $(this).attr('src');
       console.log(src);
