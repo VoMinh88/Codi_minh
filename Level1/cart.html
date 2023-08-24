@@ -10,7 +10,9 @@
   <script src="../js/bootstrap5.1.js"></script>
   <script src="../js/jquery.js"></script>
   <script src="../js/sweetalert2.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="js/script.js"></script>
+  <script src="js/script3.js"></script>
 </head>
 
 <body>
@@ -63,7 +65,7 @@
         <div class="collapse navbar-collapse text-danger" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-danger">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+              <a class="nav-link active" aria-current="page" href="index.html">Trang chủ</a>
             </li>
             <li class="nav-item dropdown">
               <a class="menu nav-link dropdown-toggle" href="#" id="brands" role="button" data-bs-toggle="dropdown"
@@ -94,34 +96,50 @@
             </li>
           </ul>
           <form class="d-flex">
+            
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="height: 100%; width: auto;">
+              <li >
+                <a class="icon-cart" href="cart.html"><i class='bx bxs-cart bx-md me-3 pointer'></i></a>
+                
+              </li>              
+            </ul>
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success bg-info" type="submit">Search</button>
           </form>
         </div>
       </div>
     </nav>
-    <img src="https://shopdunk.com/images/uploaded/PC13.png" alt="" style="width: 100%; height: auto;">
-    <div class="row voucher">
-      <div class="col-md">
-        <img src="https://shopdunk.com/images/uploaded/Bonus%20banner-36.png" alt="" class="w-100">
-      </div>
-      <div class="col-md">
-        <img src="https://shopdunk.com/images/uploaded/Bonus%20banner-26.png " alt="" class="w-100">
-      </div>
-      <div class="col-md">
-        <img src="https://shopdunk.com/images/uploaded/Bonus%20banner-16.png" alt="" class="w-100">
-      </div>
-    </div>
+    
+    
     <div class="container  mt-2" id="body-data">
       <h1 style="text-align: center;">Giỏ Hàng</h1>
       <hr>
       <div class="row" id="cart-data">
         <!-- Product Data -->
+        <div class="table-responsive">
+          <table class="table table-primary">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Hình ảnh</th>
+                <th scope="col">Tên</th>
+                <th scope="col">Giá</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Thành tiền</th>
+              </tr>
+            </thead>
+            <tbody id="cartressult">
+
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="container text-center m-3"><button class="btn-info mt-2" id="more-data">Xem Thêm</button></div>
+
     </div>
   </div>
   <hr>
+  <div>
+
   </div>
   <footer>
     <div>©2023 Shop cơ bản Edit by MinhVo</div>
