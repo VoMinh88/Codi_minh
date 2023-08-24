@@ -98,6 +98,11 @@
                         </li>
                     </ul>
                     <form class="d-flex">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-danger" style="height: 100%; width: auto;">
+                            <li >
+                              <a class="nav-link active "  href="#"><i class='bx bxs-cart bx-md pointer'></i></a>
+                            </li>              
+                          </ul>
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success bg-info" type="submit">Search</button>
                     </form>
@@ -111,7 +116,7 @@
         <h1 style="text-align: center;">Chi Tiết Sản Phẩm</h1>
         <hr>
 
-        <div class="container" style="text-align: center;">
+        <div class="container-xxl" style="text-align: center;">
             <div class="row">
                 <div class="col-md-3">
                     <div id="img-product">
@@ -131,12 +136,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="sameBrand">
-
-                        
-                    </div>
                 </div>
-                <div class="col-md-9 content-data" style="background-color: rgb(190, 190, 231); " id="table-product">
+                <div class="col-md-5"  id="table-product">
                     <!-- <table class="table">
                         <tbody>
                             <tr>
@@ -161,15 +162,26 @@
                             </tr>
                         </tbody>
                     </table> -->
-
                 </div>
-                <div class="row ">
 
+                <div class="col-md d-grid grid-template-rows: auto auto;">
+                  
+                    <div class=" bg-info m-2" >
+                        <h5>Sản Phẩm Cùng Thương Hiệu</h5>
+                    </div>
+                    <div class=" bg-light m-2" >
+                        <h5>Sản Phẩm Cùng Loại</h5>
+                    </div>
+                  
                 </div>
-                <div id="xemThem">
-                    <Button class="btn btn-primary xemThemBtn mt-3">Xem thêm</Button>
-                    
-                </div>  
+
+                <div class="container-xxl content-data mb-2 pb-5 " id="table-data-product" style="text-align: left;">                    
+                </div>
+                <div id="xemThem"><Button class="te btn btn-outline-success xemThemBtn mt-3">Xem thêm</Button>                    
+                </div>
+                
+                
+                  
             </div>
         </div>
 
