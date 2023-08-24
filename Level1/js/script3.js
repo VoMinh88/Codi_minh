@@ -61,15 +61,11 @@
           while (i<=pages) {
             if (i==res.products.current_page) {
                 str +=
-                `<li><a class="page active" href="getCart.html?id=`+id+`&page=`+i+`">` +
-                i +
-                `</a></li>`; 
+                `<li><a class="page active p-3 m-1" style="border-radius:5%; border: 0.5px solid skyblue;" href="getCart.html?id=`+id+`&page=`+i+`">`+i+`</a></li>`; 
             }
             else {
                 str +=
-                `<li><a class="page" href="getCart.html?id=`+id+`&page=`+pages+`">` +
-                i +
-                `</a></li>`; 
+                `<li><a class="page active pointer p-3 m-1" style="border-radius:5%; border: 0.5px solid skyblue;" href="getCart.html?id=`+id+`&page=`+i+`">`+i+`</a></li>`; 
             } 
             i++;
           }

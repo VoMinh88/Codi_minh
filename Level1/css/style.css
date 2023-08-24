@@ -30,3 +30,21 @@ svg {
 .pointer {
   cursor: pointer;
 }
+.pageination>li>a:link {
+  background-color: yellow;
+}
+
+.pageination>li>a:visited {
+  background-color: cyan;
+}
+
+.pageination>li>a:hover {
+  background-color: rgb(218, 90, 90);
+}
+
+.pageination>li>a:active {
+  background-color: hotpink;
+} 
+ul {
+  list-style: none;
+  }
