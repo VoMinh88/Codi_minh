@@ -4,16 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chi Tiết Sản Phẩm</title>
+  <title>Shopping Online</title>
   <link rel="stylesheet" href="../css/bootstrap5.1.css">
-  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="css/style.css">
   <script src="../js/bootstrap5.1.js"></script>
   <script src="../js/jquery.js"></script>
   <script src="../js/sweetalert2.js"></script>
-  <script src="../js/owl.carousel.min.js"></script>
-  <script src="js/script.js"></script>
-  <script src="js/script3.js"></script>
+  <script src="js/home.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -87,7 +86,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" id="cart">Giỏ Hàng</a>
+              <a class="nav-link" href="#" id="cart">Hoá Đơn</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" id="loginBtn">Login</a>
@@ -96,34 +95,38 @@
               <a class="nav-link" href="#" id="logoutBtn">Logout</a>
             </li>
           </ul>
-          <form class="d-flex">
+          <form class="d-flex" >
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-danger" style="height: 100%; width: auto;">
               <li >
                 <a class="icon-cart" href="cart.html"><i class='bx bxs-cart bx-md me-3 pointer'></i></a>
                 
               </li>              
             </ul>
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success bg-info" type="submit">Search</button>
+            <input class="form-control me-2 inputsearch" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success bg-info submitsearch" type="submit">Search</button>
           </form>
         </div>
       </div>
     </nav>
-    
+    <img src="https://shopdunk.com/images/uploaded/PC13.png" alt="" style="width: 100%; height: auto;">
+    <div class="row voucher">
+      <div class="col-md">
+        <img src="https://shopdunk.com/images/uploaded/Bonus%20banner-36.png" alt="" class="w-100">
+      </div>
+      <div class="col-md">
+        <img src="https://shopdunk.com/images/uploaded/Bonus%20banner-26.png " alt="" class="w-100">
+      </div>
+      <div class="col-md">
+        <img src="https://shopdunk.com/images/uploaded/Bonus%20banner-16.png" alt="" class="w-100">
+      </div>
     </div>
-    <div class="container  mt-2" >
-      <h1 style="text-align: center;" id="brand-title-data">Title</h1>
+    <div class="container  mt-2" id="body-data">
+      <h1 style="text-align: center;">Sản Phẩm</h1>
       <hr>
-      <div class="row"  id="brand-product-data">
+      <div class="row" id="product-data">
         <!-- Product Data -->
       </div>
-      <div class="row"  >
-        <ul style="display: inline-flex; text-align: center;" class="pageination col p-3">
-          
-        </ul>
-      </div>
-
-      
+      <div class="container text-center m-3"><button class="btn-info mt-2" id="more-data">Xem Thêm</button></div>
     </div>
   </div>
   <hr>

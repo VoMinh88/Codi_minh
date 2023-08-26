@@ -43,7 +43,7 @@ svg {
 }
 
 .pageination>li>a:active {
-  background-color: hotpink;
+  background-color: rgb(160, 111, 136);
 } 
 ul {
   list-style: none;
