@@ -112,7 +112,7 @@ function loaddetail() {
             $("#table-product").html(str);
             $(".content-data").hide();
             $("#xemThem").hide();
-
+            addToCart()
             $(".chitietBtn").click(function (e) {
               e.preventDefault();
               $(".content-data").show();
