@@ -48,3 +48,10 @@ svg {
 ul {
   list-style: none;
   }
+
+/* .table:nth-child(odd){
+  background-color: aqua;
+}
+.table:nth-child(even){
+  background-color: rgb(226, 233, 233);
+} */
