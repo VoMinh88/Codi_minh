@@ -17,7 +17,7 @@ function loadCart() {
       success: function (res) {
         if (res.check==true) {
           if (res.result.length > 0) {
-            var str = `Chưa có Sản Phẩm trong giỏ hàng`;
+            var str = ``;
             var sum = 0;
             res.result.forEach((el, index) => {
               str +=
