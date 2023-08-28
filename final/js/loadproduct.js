@@ -34,9 +34,11 @@
                     <p class="card-text">Giá : ` +Intl.NumberFormat("en-US").format(el.price) +` vnđ</p>
                     <p href="getCate.html?id=`+el.id+`">Loại sản phẩm : ` +el.catename +`</p>
                     <p href="getBrandProducts.html?id=`+el.id+`">Loại sản phẩm : ` +el.brandname +`</p>
-                    <a href="detail.html?id=`+el.id+`" class="btn btn-primary col col-md m-2 w-auto chitietBtn" item-id="`+el.id+`">Chi tiết</a>
-                    <button class="btn btn-primary col col-md m-2 w-auto addtocartBtn" cart-id="`+el.id+`">Thêm Giỏ Hàng</button>                   
-                  </div>
+                    <div class="row justify-content-between text-center ">
+                    <a href="detail.html?id=`+el.id+`" class="btn btn-primary align-self-center col col-md m-2 w-auto chitietBtn" item-id="`+el.id+`" >Chi tiết</a>
+                    <button class="btn btn-primary col col-md-3 m-2 w-auto addtocartBtn" cart-id="`+el.id+`">Thêm Giỏ Hàng</button>                   
+                    </div>
+                    </div>
                 </div>
               </div>
               `;
