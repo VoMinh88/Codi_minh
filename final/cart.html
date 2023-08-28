@@ -70,6 +70,28 @@
   </div>
   <!-- Kết thúc delete Modal -->
 
+  <!-- thanh toán Modal -->
+<div class="modal fade" id="thanhtoanModal" tabindex="-1" aria-labelledby="thanhtoanModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="thanhtoanModalLabel">Nhập thông tin thanh toán</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text"> Nhập Họ và tên
+        <input type="text"> Số điện thoại
+        <input type="text"> Nhập địa chỉ
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Kết thúc thanh toán Modal -->
+
   <div class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-success">
       <div class="container-fluid">
@@ -153,6 +175,9 @@
         </div>
       </div>
 
+    </div>
+    <div class="container text-center  mt-2">
+      <button class="btn btn-success" id="thanhtoansubmit" style="width: 300px;height: auto;">Thanh Toán</button>
     </div>
   </div>
   <hr>
