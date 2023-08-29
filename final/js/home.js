@@ -108,7 +108,9 @@ function loadMenu() {
             var str = ``;
             brands.forEach((el) => {
               str +=
-                `<li><a class="dropdown-item" href="getBrandProducts.html?id=`+el.id+`&page=1">` +
+                `<li><a class="dropdown-item" href="getBrandProducts.html?id=` +
+                el.id +
+                `&page=1">` +
                 el.name +
                 `</a></li>`;
             });
@@ -120,7 +122,9 @@ function loadMenu() {
             var str = ``;
             cates.forEach((el) => {
               str +=
-                `<li><a class="dropdown-item" href="getCate.html?id=`+el.id+`&page=1">` +
+                `<li><a class="dropdown-item" href="getCate.html?id=` +
+                el.id +
+                `&page=1">` +
                 el.name +
                 `</a></li>`;
             });
@@ -137,83 +141,111 @@ function loadMenu() {
 }
 
 function addToCart() {
-  $('.addtocartBtn').click(function (e) { 
+  $(".addtocartBtn").click(function (e) {
     e.preventDefault();
-    if (localStorage.getItem('cart')&&localStorage.getItem('cart')!=null) {
-      
-      var cart = localStorage.getItem('cart')
-      var arr = JSON.parse(cart)
+    if (localStorage.getItem("cart") && localStorage.getItem("cart") != null) {
+      var cart = localStorage.getItem("cart");
+      var arr = JSON.parse(cart);
     } else {
-      var arr = []
+      var arr = [];
     }
-    var id = Number($(this).attr('cart-id'))
-    var qty = 1
+    var id = Number($(this).attr("cart-id"));
+    var qty = 1;
 
-    var check = 0
+    var check = 0;
 
-    arr.forEach(el => {
-      if (id==el[0]) {
-        el[1]++
-        check = 1
-      } 
+    arr.forEach((el) => {
+      if (id == el[0]) {
+        el[1]++;
+        check = 1;
+      }
     });
-    if(check==0) {
-      var item = [id,qty]
-      arr.push(item)
+    if (check == 0) {
+      var item = [id, qty];
+      arr.push(item);
     }
-    localStorage.setItem('cart',JSON.stringify(arr))
-      Toast.fire({
-        icon: "success",
-        title: "Đã Thêm Thành Công",
-      });
+    localStorage.setItem("cart", JSON.stringify(arr));
+    Toast.fire({
+      icon: "success",
+      title: "Đã Thêm Thành Công",
+    });
   });
 }
-function search(){
-$('.submitsearch').click(function (e) { 
-  e.preventDefault();
-  var search = $(".inputsearch").val().trim()
-  $.ajax({
-    type: "GET",
-    url: "https://students.trungthanhweb.com/api/getSearchProducts",
-    data: {
-      apitoken:localStorage.getItem('token'),
-      data:search
-    },
-    dataType: "JSON",
-    success: function (res) {
-      if (res.check==true) {
-        const result = res.data;
-        console.log(result);
-      }
-      const result = res.data;
-      // if (result.length > 0) {
-
-        
-        // var str = ``;
-        // result.forEach((el) => {
-        //   str +=
-        //     `
-        //   <div class="col-md-3 mb-3" >
-        //     <div class="card border-info" style="border-radius: 10px; w-100">
-        //       <img src="https://students.trungthanhweb.com/images/`+el.images +`" class="card-img-top mt-2" alt="">
+function search() {
+  $(".submitsearch").click(function (e) {
+    e.preventDefault();
+    if (
+      localStorage.getItem("token") &&
+      localStorage.getItem("token") != null
+    ) {
+      var search = $(".inputsearch").val().trim();
+      $.ajax({
+        type: "GET",
+        url: "https://students.trungthanhweb.com/api/getSearchProducts",
+        data: {
+          apitoken: localStorage.getItem("token"),
+          name: search,
+        },
+        dataType: "JSON",
+        success: function (res) {
+          const product = res.products.data;
+          if (product.length > 0) {
+            var str = ``;
+            product.forEach((el) => {
+              str +=
+                `
+          <div class="col-md-3 mb-3" >
+            <div class="card border-info" style="border-radius: 10px; w-100">
+              <img src="https://students.trungthanhweb.com/images/` +
+                el.images +
+                `" class="card-img-top mt-2" alt="">
             
-        //       <div class="card-body m-2">
-        //         <h5 class="card-title">` +el.name +`</h5>
-        //         <p class="card-text">Giá : ` +Intl.NumberFormat("en-US").format(el.price) +` vnđ</p>
-        //         <p href="getCate.html?id=`+el.id+`">Loại sản phẩm : ` +el.catename +`</p>
-        //         <p href="getBrandProducts.html?id=`+el.id+`">Loại sản phẩm : ` +el.brandname +`</p>
-        //         <a href="detail.html?id=`+el.id+`" class="btn btn-primary col col-md m-2 w-auto chitietBtn" item-id="`+el.id+`">Chi tiết</a>
-        //         <button class="btn btn-primary col col-md m-2 w-auto addtocartBtn" cart-id="`+el.id+`">Thêm Giỏ Hàng</button>                   
-        //       </div>
-        //     </div>
-        //   </div>
-        //   `;
-        // });
+              <div class="card-body m-2">
+                <h5 class="card-title">` +
+                el.name +
+                `</h5>
+                <p class="card-text">Giá : ` +
+                Intl.NumberFormat("en-US").format(el.price) +
+                ` vnđ</p>
+                <p href="getCate.html?id=` +
+                el.id +
+                `">Loại sản phẩm : ` +
+                el.catename +
+                `</p>
+                <p href="getBrandProducts.html?id=` +
+                el.id +
+                `">Loại sản phẩm : ` +
+                el.brandname +
+                `</p>
+                <div class="row justify-content-between text-center ">
+                <a href="detail.html?id=` +
+                el.id +
+                `" class="btn btn-primary align-self-center col col-md m-2 w-auto chitietBtn" item-id="` +
+                el.id +
+                `" >Chi tiết</a>
+                <button class="btn btn-primary col col-md-3 m-2 w-auto addtocartBtn" cart-id="` +
+                el.id +
+                `">Thêm Giỏ Hàng</button>                   
+                </div>
+                </div>
+            </div>
+          </div>
+          `;
+            });
+          }
 
-      // }
+          if (res.products.next_page_url != null) {
+            page++;
+          } else {
+            $("#more-data").hide();
+          }
+
+          $("#product-data").append(str);
+          addToCart();
+        },
+      });
+    } else {
+      $("#body-data").hide();
     }
   });
-  
-});
-
 }

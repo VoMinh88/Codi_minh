@@ -164,6 +164,7 @@ function thanhtoan(){
       }else{
         $('.confirm-checkout').attr('disabled','disabled');
         var cart = JSON.parse(localStorage.getItem('cart'));
+        
         $.ajax({
           type: "POST",
           url: "https://students.trungthanhweb.com/api/createBill",
@@ -176,6 +177,7 @@ function thanhtoan(){
           },
           dataType: "JSON",
           success: function (response) {
+            
             Toast.fire({
               icon: "success",
               title: "Đặt hàng thành công",
@@ -185,6 +187,7 @@ function thanhtoan(){
             })
           }
         });
+        
       }
     })
   })
