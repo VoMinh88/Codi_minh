@@ -179,74 +179,79 @@ function search() {
       localStorage.getItem("token") != null
     ) {
       var search = $(".inputsearch").val().trim();
-      $.ajax({
-        type: "GET",
-        url: "https://students.trungthanhweb.com/api/getSearchProducts",
-        data: {
-          apitoken: localStorage.getItem("token"),
-          name: search,
-        },
-        dataType: "JSON",
-        success: function (res) {
-          var product = res.result;
-          var str = ``;
-          
-          if (product.length > 0) {
+      if (search.length>0) {
+        $.ajax({
+          type: "GET",
+          url: "https://students.trungthanhweb.com/api/getSearchProducts",
+          data: {
+            apitoken: localStorage.getItem("token"),
+            name: search,
+          },
+          dataType: "JSON",
+          success: function (res) {
+            var product = res.result;
+            var str = ``;
             
-
-            product.forEach(el => {
-              str +=
-                `
-          <div class="col-md-3 mb-3" >
-            <div class="card border-info box-shadow w-100" style="border-radius: 10px; box-shadow: 2px 5px #888888; ">
-              <img src="https://students.trungthanhweb.com/images/` +
-                el.image +
-                `" class="card-img-top mt-2 " alt="">
-            
-              <div class="card-body m-2">
-                <h5 class="card-title">` +
-                el.name +
-                `</h5>
-                <p class="card-text">Giá : ` +
-                Intl.NumberFormat("en-US").format(el.price) +
-                ` vnđ</p>
-                <p href="getCate.html?id=` +
-                el.id +
-                `">Loại sản phẩm : ` +
-                el.catename +
-                `</p>
-                <p href="getBrandProducts.html?id=` +
-                el.id +
-                `">Loại sản phẩm : ` +
-                el.brandname +
-                `</p>
-                <div class="row justify-content-between text-center ">
-                <a href="detail.html?id=` +
-                el.id +
-                `" class="btn btn-primary align-self-center col col-md m-2 w-auto chitietBtn" item-id="` +
-                el.id +
-                `" >Chi tiết</a>
-                <button class="btn btn-primary col col-md-3 m-2 w-auto addtocartBtn" cart-id="` +
-                el.id +
-                `">Thêm Giỏ Hàng</button>                   
-                </div>
-                </div>
+            if (product.length > 0) {
+              
+  
+              product.forEach(el => {
+                str +=
+                  `
+            <div class="col-md-3 mb-3" >
+              <div class="card border-info box-shadow w-100" style="border-radius: 10px; box-shadow: 2px 5px #888888; ">
+                <img src="https://students.trungthanhweb.com/images/` +
+                  el.image +
+                  `" class="card-img-top mt-2 " alt="">
+              
+                <div class="card-body m-2">
+                  <h5 class="card-title">` +
+                  el.name +
+                  `</h5>
+                  <p class="card-text">Giá : ` +
+                  Intl.NumberFormat("en-US").format(el.price) +
+                  ` vnđ</p>
+                  <p href="getCate.html?id=` +
+                  el.id +
+                  `">Loại sản phẩm : ` +
+                  el.catename +
+                  `</p>
+                  <p href="getBrandProducts.html?id=` +
+                  el.id +
+                  `">Loại sản phẩm : ` +
+                  el.brandname +
+                  `</p>
+                  <div class="row justify-content-between text-center ">
+                  <a href="detail.html?id=` +
+                  el.id +
+                  `" class="btn btn-primary align-self-center col col-md m-2 w-auto chitietBtn" item-id="` +
+                  el.id +
+                  `" >Chi tiết</a>
+                  <button class="btn btn-primary col col-md-3 m-2 w-auto addtocartBtn" cart-id="` +
+                  el.id +
+                  `">Thêm Giỏ Hàng</button>                   
+                  </div>
+                  </div>
+              </div>
             </div>
-          </div>
-          `;
-            });
-          }
-
-          if (res.next_page_url != null) {
-            page++;
-          } else {
-            $("#more-data").hide();
-          }
-
-          $("#product-data").html(str);
-          addToCart();
-        },
-      });
+            `;
+              });
+            }
+  
+            if (res.next_page_url != null) {
+              page++;
+            } else {
+              $("#more-data").hide();
+            }
+  
+            $("#product-data").html(str);
+            addToCart();
+          },
+        });
+      } else {
+        window.location.reload()
+      }
+      
     } else {
       $("#body-data").hide();
     }
