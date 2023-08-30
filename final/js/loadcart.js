@@ -164,7 +164,7 @@ function thanhtoan(){
       }else{
         $('.confirm-checkout').attr('disabled','disabled');
         var cart = JSON.parse(localStorage.getItem('cart'));
-        
+        console.log(cart);
         $.ajax({
           type: "POST",
           url: "https://students.trungthanhweb.com/api/createBill",

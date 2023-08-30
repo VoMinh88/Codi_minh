@@ -26,10 +26,10 @@
               str +=
                 `
               <div class="col-md-3 mb-3" >
-                <div class="card border-info" style="border-radius: 10px; w-100">
+                <div class="card border-info w-100" style="border-radius: 10px;box-shadow: 2px 5px #888888;">
                   <img src="https://students.trungthanhweb.com/images/`+el.images +`" class="card-img-top mt-2" alt="">
                 
-                  <div class="card-body m-2">
+                  <div class="card-body m-1">
                     <h5 class="card-title">` +el.name +`</h5>
                     <p class="card-text">Giá : ` +Intl.NumberFormat("en-US").format(el.price) +` vnđ</p>
                     <p href="getCate.html?id=`+el.id+`">Loại sản phẩm : ` +el.catename +`</p>

@@ -188,17 +188,20 @@ function search() {
         },
         dataType: "JSON",
         success: function (res) {
-          const product = res.products.data;
+          var product = res.result;
+          var str = ``;
+          
           if (product.length > 0) {
-            var str = ``;
-            product.forEach((el) => {
+            
+
+            product.forEach(el => {
               str +=
                 `
           <div class="col-md-3 mb-3" >
-            <div class="card border-info" style="border-radius: 10px; w-100">
+            <div class="card border-info box-shadow w-100" style="border-radius: 10px; box-shadow: 2px 5px #888888; ">
               <img src="https://students.trungthanhweb.com/images/` +
-                el.images +
-                `" class="card-img-top mt-2" alt="">
+                el.image +
+                `" class="card-img-top mt-2 " alt="">
             
               <div class="card-body m-2">
                 <h5 class="card-title">` +
@@ -234,13 +237,13 @@ function search() {
             });
           }
 
-          if (res.products.next_page_url != null) {
+          if (res.next_page_url != null) {
             page++;
           } else {
             $("#more-data").hide();
           }
 
-          $("#product-data").append(str);
+          $("#product-data").html(str);
           addToCart();
         },
       });
